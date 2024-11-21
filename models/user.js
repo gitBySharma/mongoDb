@@ -1,22 +1,22 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const userSchema = new Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true,
-    },
-    cart: {
-        type: [
-            {
-                productId: { type: Schema.Types.ObjectId, ref: "Product", required: true },
-                quantity: { type: Number, required: true }
-            }
-        ]
-    }
+  name: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  cart: {
+    type: [
+      {
+        productId: { type: Schema.Types.ObjectId, ref: "Product", required: true },
+        quantity: { type: Number, required: true }
+      }
+    ]
+  }
 });
 
 
@@ -89,18 +89,18 @@ module.exports = mongoose.model("User", userSchema);
 //       });
 //   }
 
-//   deleteItemFromCart(productId) {
-//     const updatedCartItems = this.cart.items.filter(item => {
-//       return item.productId.toString() !== productId.toString();
-//     });
-//     const db = getDb();
-//     return db
-//       .collection('users')
-//       .updateOne(
-//         { _id: new ObjectId(this._id) },
-//         { $set: { cart: { items: updatedCartItems } } }
-//       );
-//   }
+// deleteItemFromCart(productId) {
+//   const updatedCartItems = this.cart.items.filter(item => {
+//     return item.productId.toString() !== productId.toString();
+//   });
+//   const db = getDb();
+//   return db
+//     .collection('users')
+//     .updateOne(
+//       { _id: new ObjectId(this._id) },
+//       { $set: { cart: {items: updatedCartItems} } }
+//     );
+// }
 
 //   addOrder() {
 //     const db = getDb();
