@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 const errorController = require('./controllers/error');
 const User = require('./models/user');
+const Order = require("./models/order");
 
 const app = express();
 
